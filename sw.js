@@ -1,9 +1,10 @@
-var cacheName = 'hello-pwa:v2';
+var cacheName = 'hello-pwa:v3';
 var filesToCache = [
   '/',
   '/index.html',
   '/css/style.css',
   '/js/main.js',
+    '/js/camera.js',
     '/images/img_avatar2.png'
 ];
 
