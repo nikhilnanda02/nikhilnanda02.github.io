@@ -43,15 +43,33 @@
         </div>
     </div>
     <div id="dashboardDiv" style="display: none;">
-        <div class="imgcontainer">
-            <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
-        </div>
         <h2 id="welcomeMessage">Hello </h2>
+
+
+        <div>
+            <button id="grabFrame">Grab Frame</button>
+            <button id="takePhoto">Take Photo</button>
+            <div class="select">
+                <label for="videoSource">Video source: </label><select id="videoSource"></select>
+            </div>
+            <input class="hidden" id="zoom" type="range" step="20">
+        </div>
+
+        <video autoplay playsinline class="hidden"></video>
+        <img>
+        <canvas class="hidden"></canvas>
+
+        <a href="https://github.com/samdutton/simpl/blob/gh-pages/imagecapture" title="View source for this page on GitHub" id="viewSource">View source on GitHub</a>
+
     </div>
 
 
 
+
+
+
     <script src="js/main.js"></script>
+    <script src="js/camera.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 </body>
