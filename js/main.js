@@ -5,9 +5,8 @@ window.onload = () => {
         navigator.serviceWorker
             .register('./sw.js');
     }
-}
-window.onDeviceReady = () => {
-    //this.receivedEvent('deviceready');
+
+
     $("#loginBtn").click($.proxy(function (event) {
         if ($('#username').val() == '') {
             tempHTML = "<label  class='errorLabel error-alert error-alert-login'>Username cannot be blank</label>";
@@ -26,5 +25,6 @@ window.onDeviceReady = () => {
             $('#welcomeMessage').append($('#username').val());
         }
     }));
+
 
 }
