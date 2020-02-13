@@ -6,7 +6,7 @@ window.onload = () => {
             .register('./sw.js');
     }
 }
-window.onDeviceReady: function () {
+window.onDeviceReady = () => {
     //this.receivedEvent('deviceready');
     $("#loginBtn").click($.proxy(function (event) {
         if ($('#username').val() == '') {
