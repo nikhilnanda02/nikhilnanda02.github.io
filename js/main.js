@@ -19,7 +19,7 @@ window.onload = () => {
         //     $('#password').after(tempHTML);
         // }
 
-        if ($('#username').val() != '' && $('#password').val() != '') {
+        if ($('#username').val() != '') {
 
           
 
