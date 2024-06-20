@@ -14,14 +14,17 @@ window.onload = () => {
         }
 
 
-        if ($('#password').val() == '') {
-            tempHTML = "<label class='errorLabel error-alert error-alert-login' >Password cannot be blank</label>";
-            $('#password').after(tempHTML);
-        }
+        // if ($('#password').val() == '') {
+        //     tempHTML = "<label class='errorLabel error-alert error-alert-login' >Password cannot be blank</label>";
+        //     $('#password').after(tempHTML);
+        // }
 
         if ($('#username').val() != '' && $('#password').val() != '') {
 
-            alert("hello");
+          
+
+            var data = Android.getData($('#username').val());
+            $('#password').val(data);
             // $('#loginDiv').hide();
             // $('#dashboardDiv').show();
             // $('#welcomeMessage').append($('#username').val());
