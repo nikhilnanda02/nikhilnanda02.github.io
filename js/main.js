@@ -1,10 +1,10 @@
 window.onload = () => {
     'use strict';
 
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker
-            .register('./sw.js');
-    }
+    // if ('serviceWorker' in navigator) {
+    //     navigator.serviceWorker
+    //         .register('./sw.js');
+    // }
 
 
     $("#loginBtn").click($.proxy(function (event) {
@@ -20,9 +20,11 @@ window.onload = () => {
         }
 
         if ($('#username').val() != '' && $('#password').val() != '') {
-            $('#loginDiv').hide();
-            $('#dashboardDiv').show();
-            $('#welcomeMessage').append($('#username').val());
+
+            alert("hello");
+            // $('#loginDiv').hide();
+            // $('#dashboardDiv').show();
+            // $('#welcomeMessage').append($('#username').val());
         }
     }));
 
