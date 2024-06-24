@@ -21,10 +21,17 @@ window.onload = () => {
 
         if ($('#username').val() != '') {
 
-          
 
-            var data = Android.getData($('#username').val());
-            $('#password').val(data);
+
+           
+                try {
+                    webkit.messageHandlers.callbackHandler.postMessage("camera");
+                } catch(err) {
+                    console.log('The native context does not exist yet');
+                }    
+
+            // var data = Android.getData($('#username').val());
+            // $('#password').val(data);
             // $('#loginDiv').hide();
             // $('#dashboardDiv').show();
             // $('#welcomeMessage').append($('#username').val());
