@@ -8,6 +8,7 @@ window.onload = () => {
 
 
     $("#loginBtn").click($.proxy(function (event) {
+
         if ($('#username').val() == '') {
             tempHTML = "<label  class='errorLabel error-alert error-alert-login'>Username cannot be blank</label>";
             $('#username').after(tempHTML);
@@ -25,7 +26,7 @@ window.onload = () => {
 
            
                 try {
-                    webkit.messageHandlers.callbackHandler.postMessage("camera");
+                   window.webkit.messageHandlers.callbackHandler.postMessage("camera");
                 } catch(err) {
                     console.log('The native context does not exist yet');
                 }    
@@ -38,5 +39,9 @@ window.onload = () => {
         }
     }));
 
+    function receiveData(msg){
+        alert(msg);
+
+    }
 
 }
