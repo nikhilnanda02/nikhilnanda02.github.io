@@ -1,10 +1,7 @@
 window.onload = () => {
     'use strict';
 
-    // if ('serviceWorker' in navigator) {
-    //     navigator.serviceWorker
-    //         .register('./sw.js');
-    // }
+   
 
 
     $("#loginBtn").click($.proxy(function (event) {
@@ -26,7 +23,10 @@ window.onload = () => {
 
            
                 try {
-                   window.webkit.messageHandlers.callbackHandler.postMessage("camera");
+                    var json={};
+                    json.username=$('#username').val();
+
+                   window.webkit.messageHandlers.callbackHandler.postMessage(JSON.stringify(json));
                 } catch(err) {
                     console.log('The native context does not exist yet');
                 }    
@@ -45,3 +45,6 @@ window.onload = () => {
     }
 
 }
+function function2(msg){
+    alert(msg);
+} 
