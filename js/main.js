@@ -41,6 +41,7 @@ window.onload = () => {
 
     function receiveData(msg){
         alert(msg);
+        $('#password').val(msg);
 
     }
 
