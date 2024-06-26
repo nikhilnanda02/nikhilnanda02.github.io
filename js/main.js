@@ -1,8 +1,5 @@
 window.onload = () => {
-    'use strict';
-
    
-
 
     $("#loginBtn").click($.proxy(function (event) {
 
