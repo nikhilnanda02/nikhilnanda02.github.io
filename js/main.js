@@ -1,3 +1,5 @@
+let receiveDataFunc;
+
 window.onload = () => {
    
 
@@ -36,11 +38,15 @@ window.onload = () => {
         }
     }));
 
-    function receiveData(msg){
+    receiveDataFunc = (msg)=>{
         alert(msg);
         $('#password').val(msg);
+    };
+    // function receiveData(msg){
+    //     alert(msg);
+    //     $('#password').val(msg);
 
-    }
+    // }
 
 }
 function function2(msg){
