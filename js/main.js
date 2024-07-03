@@ -21,17 +21,17 @@ window.onload = () => {
 
 
            
-                try {
-                    var json={};
-                    json.username=$('#username').val();
+                // try {
+                //     var json={};
+                //     json.username=$('#username').val();
 
-                   window.webkit.messageHandlers.callbackHandler.postMessage(JSON.stringify(json));
-                } catch(err) {
-                    console.log('The native context does not exist yet');
-                }    
+                //    window.webkit.messageHandlers.callbackHandler.postMessage(JSON.stringify(json));
+                // } catch(err) {
+                //     console.log('The native context does not exist yet');
+                // }    
 
-            // var data = Android.getData($('#username').val());
-            // $('#password').val(data);
+            var data = NEMF.invokeThirdPartyService($('#username').val());
+            $('#password').val(data);
             // $('#loginDiv').hide();
             // $('#dashboardDiv').show();
             // $('#welcomeMessage').append($('#username').val());
