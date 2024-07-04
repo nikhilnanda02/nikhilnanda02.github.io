@@ -1,17 +1,9 @@
 let receiveDataFunc;
 
-var nativeCallbackHandler = function(params){
-    console.log("params recieved", params);
-}
 window.onload = () => {
    
 
-    $("#loginBtn").click($.proxy(function (event) {
-
-        if ($('#username').val() == '') {
-            tempHTML = "<label  class='errorLabel error-alert error-alert-login'>Username cannot be blank</label>";
-            $('#username').after(tempHTML);
-        }
+    $("#initiateMorphoFingerPrintScanner").click($.proxy(function (event) {
 
 
         // if ($('#password').val() == '') {
@@ -19,7 +11,7 @@ window.onload = () => {
         //     $('#password').after(tempHTML);
         // }
 
-        if ($('#username').val() != '') {
+        // if ($('#username').val() != '') {
 
 
 
@@ -46,12 +38,12 @@ window.onload = () => {
             // $('#loginDiv').hide();
             // $('#dashboardDiv').show();
             // $('#welcomeMessage').append($('#username').val());
-        }
+        // }
     }));
 
     receiveDataFunc = (msg)=>{
-        alert(msg);
-        $('#password').val(msg);
+        $(".morphoResult").text('');
+        $(".morphoResult").text(msg);
     };
     // function receiveData(msg){
     //     alert(msg);
