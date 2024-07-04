@@ -1,5 +1,8 @@
 let receiveDataFunc;
 
+var nativeCallbackHandler = function(params){
+    console.log("params recieved", params);
+}
 window.onload = () => {
    
 
@@ -31,9 +34,9 @@ window.onload = () => {
                 // }    
 
             var data = NEMF.invokeThirdPartyService($('#username').val());
-            var nativeCallbackHandler = function(params){
-                console.log("recieved params ", params);
-            }
+            // var nativeCallbackHandler = function(params){
+            //     console.log("recieved params ", params);
+            // }
             $('#password').val(data);
             // $('#loginDiv').hide();
             // $('#dashboardDiv').show();
