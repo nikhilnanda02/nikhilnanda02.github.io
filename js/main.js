@@ -29,7 +29,7 @@ window.onload = () => {
                 invokeThirdPartyServiceOptions.intentAction = "in.gov.uidai.rdservice.fp.CAPTURE";
                 invokeThirdPartyServiceOptions.packageToOpen = "com.idemia.l1rdservice";
                 invokeThirdPartyServiceOptions.PID_OPTIONS = "<PidOptions ver=\"1.0\"><Opts env=\"PP\" fCount=\"1\" fType=\"2\" iCount=\"0\" iType=\"\" pCount=\"0\" pType=\"\" format=\"0\" pidVer=\"2.0\" timeout=\"20000\" wadh=\"E0jzJ/P8UopUHAieZn8CKqS4WPMi5ZSYXgfnlfkWjrc=\" posh=\"UNKNOWN\"/><Demo></Demo><CustOpts><Param name=\"\" value=\"\" /></CustOpts></PidOptions>";
-                NEMF.invokeThirdPartyService(invokeThirdPartyServiceOptions);
+                NEMF.invokeThirdPartyService(JSON.stringify(invokeThirdPartyServiceOptions));
             // var data = NEMF.invokeThirdPartyService($('#username').val());
             // var nativeCallbackHandler = function(params){
             //     console.log("recieved params ", params);
@@ -43,7 +43,7 @@ window.onload = () => {
 
     receiveDataFunc = (msg)=>{
         $(".morphoResult").text('');
-        $(".morphoResult").text(msg);
+        $(".morphoResult").text(JSON.stringify(msg));
     };
     // function receiveData(msg){
     //     alert(msg);
