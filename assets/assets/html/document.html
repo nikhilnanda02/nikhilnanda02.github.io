@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" media="all" href="../vendors/opall/css/style.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="../vendors/opall/css/bootstrap.css" />
+</head>
+<html>
+<body>
+<!-- Bug 70970 - Unable to view the document completely in iBPS mobile,document is loaded behind top menu bar  -->
+    <div id="OpAll" style="-webkit-transform-origin: top right;position: absolute;right: 0;top: 0;">
+<!-- Transformation Toolbar --->
+    <div id="TransformationToolbar" class="nodisplay" >
+    </div>
+    
+    
+<!--- ViewArea --->
+    <div id="imageArea">
+        <div data-role="page" class="wrapper" id="viewArea" style="overflow:scroll;width: 100%!important;margin-top: 0%;">
+                <canvas id="imageCanvas" width="600px" height="600px" oncontextmenu="return false">  
+                </canvas>
+                 <canvas id="annotCanvas" width="0px" height="0px" oncontextmenu="return false">  
+                </canvas>
+        </div>
+        <!--- Annotation Toolbar --->    
+        <div id="AnnotationToolbar" class="nodisplay">
+        </div>
+    </div>
+    
+ <!--- Loading Bar -->  
+    <div id="modalLoadBar" class="modalDialog" >
+        <div id="loadDiv" >
+            
+            <div id="spinnerDiv" > </div>
+            <div id="loadingText"> Loading ..... </div>
+       
+         </div>
+    </div> 
+
+
+<!----- Page Navigation Bar   ---->
+    <div id="pageNavgBar" >
+       <!--input id="pageNavgSlider" type="range"  min="0"  value="0"  onmouseup="pageShow()" onmousedown="scrollStart()" oninput="scrollMove()"/-->
+       <input id="pageNavgSlider" type="range"  min="0"  value="0" />
+    </div>
+    <div id="pagediv">
+        1
+    </div>
+  </div>
+
+
+
+  <script src="../vendors/opall/vendors/pdf.js"></script>
+  <script src="../vendors/opall/vendors/pdf.worker.js"></script>
+        <script src="../vendors/opall/vendors/compatibility.js"></script>
+        <script src="../vendors/opall/vendors/debugger.js"></script>
+        <script src="../vendors/opall/vendors/l10n.js"></script>
+        <script src="../vendors/opall/document.js"></script>
+        <script src="../vendors/opall/OpAllWrapper.js"></script>
+        <script src="../vendors/opall/viewer.js"></script>
+        <script src="../vendors/opall/JSAnnotationFactory.js"></script>
+        <script src="../vendors/opall/JSannotation.js"></script>
+        
+
+<script>
+    var isFlutterInAppWebViewReady = false;
+    window.addEventListener("flutterInAppWebViewPlatformReady", function(event) {
+        isFlutterInAppWebViewReady = true;
+    });
+function loadOpallImages(data){
+    var attachment = {};
+    attachment.url = data['serverUrl']  + '?Data=' + JSON.stringify(data['viewDocument']);//'Http://192.168.158.104:8080/omnimobapp/documentViewer.jsp?DocumentName=Document1%282021_10_5_12_15_56_159%29%28Screenshot_20161202-145238%29+%28Sc1.png%29+121_121_1&ProcessInstanceId=ImportedIformpro-0000000001-process&DeviceUniqueId=352810081536613&DocumentType=png&EngineName=ibps4sp1p3aug30&MethodName=ViewDownloadedDocument&OS=android&SessionId=795638420&userName=Badmin&opall=Y';
+    attachment.password = '';
+    // Callback funtion added for bug : 81601 : 07/12/2018
+    attachment.loadOpAllImagesCallback = fnloadOpallImagesCallback;
+    var params =
+    {
+        angle:0, 
+        zoomFactor:1,
+        annotationDisplay:true,
+        serverSupportMultipage:false
+    };
+    attachment.getData = function(pageNo, type, callback){
+         if(1 == type){
+            // var temp =  fetchUrlOrDataOfAnnotationFile();
+            var getAnnotationJson = data['getAnnotation'];
+            getAnnotationJson['pageNo'] = pageNo;
+            var obj = { url :  data['serverUrl']  + '?Data=' + JSON.stringify(getAnnotationJson)};
+            callback(pageNo, type, obj);
+        }
+        else if(type == 2){
+            var temp = fetchUrlOrDataOfPdfStampFile();
+            var obj = { url : temp };//data/
+            callback(pageNo, type, obj);
+        }
+    }
+    attachment.pageCallback = function(pageNo){
+        //This will return the page Number of the displayed page. 
+    }
+    var Viewer = new OpAllWrapper();
+    Viewer.setParameters(params);
+    Viewer.showDocument(attachment, 1, false,showDocumentCallback);
+}
+//end naveen01
+function showDocumentCallback(status){ 
+    if (1 == status.id) {
+    //document displayed correctly 
+    } else if(-2007 == status.id){
+        // window.addEventListener("flutterInAppWebViewPlatformReady", function(event) {
+        //      // call flutter handler with name 'mySum' and pass one or more arguments
+        //      window.flutter_inappwebview.callHandler('OPALL_Response',status.value).then(function(result) {
+        //        // get result from Flutter side. It will be the number 64.
+        //        console.log(result);
+        //      });
+        //    });
+        if (isFlutterInAppWebViewReady) {
+            const args = [status.value];
+            window.flutter_inappwebview.callHandler('OPALL_Response', ...args);
+         }
+        // alert(status.value);
+        // OPALL_Response.postMessage(status.value);
+    }else {
+    //some error occurred while displaying document 
+    }
+}
+
+// Callback funtion added for bug : 81601 : 07/12/2018
+function fnloadOpallImagesCallback(error){
+        console.log(error);
+}
+
+</script>
+
+</body>
+</html>

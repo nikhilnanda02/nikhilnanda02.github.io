@@ -1,0 +1,226 @@
+/**
+ *	@fileoverview  style.css style information 
+ *	@author vishant gautam
+ *  @modified	14/06/2018	vishant gautam
+ *                        Ref: OpAll-Mobile-MS-02, OpAll-Mobile-CR-02
+ */
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#imageCanvas, #annotCanvas{
+    display:block;
+    vertical-align:top;
+}
+
+#imageCanvas {
+    opacity:1;
+}
+#annotCanvas {
+    opacity:1;
+    position:absolute;
+    z-index:4;
+        top:0px;
+    left:0px;
+}
+
+#OpAll{
+    border: 2px solid black;
+    width:100%;
+    height:100%;
+}
+
+#OpAll *{
+    -webkit-transition: none;
+    transition:none;
+    margin:0;
+    padding:0;
+}
+
+.nodisplay{
+    display:none;
+}
+
+.wrapper {
+    width: 800px;
+    height: 600px;
+    display:inline-block;
+    overflow:scroll;
+    background-color: rgba(0,0,0,0.5);
+    -webkit-transition: none;
+    transition:none;
+}
+
+input[type='range'] {
+    -webkit-appearance: none;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px #333;
+    background-color: #999;
+    height: 10px;
+    vertical-align: middle;
+    border:0px;
+}
+input[type='range']::-moz-range-track {
+    -moz-appearance: none;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px #333;
+    background-color: #999;
+    height: 10px;
+    border:0px;
+}
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background-color: #FFF;
+    box-shadow:inset 0 0 10px rgba(000,000,000,0.5);
+    border: 1px solid #999;
+    height: 20px;
+    width: 40px;
+}
+input[type='range']::-moz-range-thumb{
+    -moz-appearance: none;
+    background-color: #FFF;
+    box-shadow:inset 0 0 10px rgba(000,000,000,0.5);
+    border: 1px solid #999;
+    height: 20px;
+    width: 40px;
+}
+        
+#pageNavgBar{
+    position:absolute;
+    left:0px;
+ //   bottom:0px;
+ top:0px;
+    z-index:100;
+    Opacity:1;
+    padding:15px;
+    width:0px;
+    display:none;
+    background-color:rgba(0,0,0,0.7);
+}
+
+#pageNavgSlider {
+	    z-index:101;
+}
+     
+#pagediv{
+    width:auto;
+ //   height:20px;
+    padding:5px 10px 5px 10px;
+    display:none;
+    background-color:rgba(0,0,0,0.7);
+    Opacity:1;
+    color:white;
+    z-index:200;
+    position:absolute;
+   -webkit-transition: none;
+    transition:none;
+}
+
+.modaltext{
+    padding-top:15px;
+    line-height:18px;
+}
+
+.modalDialog {
+	position: fixed;
+	font-family: arial, sans-serif;
+    
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.6);
+	z-index: 99999;
+	opacity:0;
+//	-webkit-transition: opacity 100ms ease-in;
+//	-moz-transition: opacity 100ms ease-in;
+//	transition: opacity 100ms ease-in;
+	pointer-events: none;
+	}
+
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog > div {
+    width: 250px;
+    position: relative;
+    margin: 35% 10%;
+    padding: 5px 20px 13px 20px;
+    border-radius: 5px;
+    font-size:12px;
+    background: #ffffff;
+}
+
+.modalDialog  > #loadDiv{
+    width: 150px;
+    position: relative;
+    margin: 35% 15%;
+    padding: 5px 20px 13px 15px;
+    border-radius: 5px;
+    font-size:14px;
+    background: #ffffff;
+}
+
+.modalDialog div{
+    
+    position:relative
+}
+
+#loadingText{
+    padding-top:5px;
+    padding-left:40px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width : 480px){
+   
+}
+ 
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    
+}
+
+@media only screen and (min-device-width: 900px){
+   
+}
+
+@keyframes lodingSpinner {
+    to {transform: rotate(360deg);}
+}
+ 
+@-webkit-keyframes lodingSpinner {
+    to {-webkit-transform: rotate(360deg);}
+}
+ 
+@moz-keyframes lodingSpinner{
+    to{-moz-transform: rotate(360deg);}
+}
+
+@-ms-keyframes lodingSpinner{
+    to{-ms-transform:rotate(360deg);}
+}
+
+.lodingSpinner {
+    width: 30px;
+    height: 30px;
+    border-radius:30px;
+    float:left;
+    border:3px solid rgba(0,0,0,0.3);
+    border-top-color: rgba(0, 0, 0, 1);
+    animation: lodingSpinner .6s linear infinite;
+    -webkit-animation: lodingSpinner .8s linear infinite;
+	-moz-animation: lodingSpinner .8s linear infinite;
+    -ms-animation:  lodingSpinner .8s linear infinite;
+}
+ 
+
+ 
+

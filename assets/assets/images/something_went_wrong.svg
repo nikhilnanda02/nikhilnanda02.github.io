@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="96" viewBox="0 0 84 96">
+  <g id="Group_59877" data-name="Group 59877" transform="translate(-139 -224)">
+    <path id="Path_53793" data-name="Path 53793" d="M1,0H81a1,1,0,0,1,1,1V93a1,1,0,0,1-1,1H1a1,1,0,0,1-1-1V1A1,1,0,0,1,1,0Z" transform="translate(139 226)" fill="#ffde7d"/>
+    <g id="Path_53794" data-name="Path 53794" transform="translate(141 224)" fill="#ffe8a9">
+      <path d="M 81 93.75 L 1 93.75 C 0.5864470601081848 93.75 0.25 93.41355133056641 0.25 93 L 0.25 1 C 0.25 0.5864470601081848 0.5864470601081848 0.25 1 0.25 L 81 0.25 C 81.41355133056641 0.25 81.75 0.5864470601081848 81.75 1 L 81.75 93 C 81.75 93.41355133056641 81.41355133056641 93.75 81 93.75 Z" stroke="none"/>
+      <path d="M 1 0.5 C 0.7242965698242188 0.5 0.5 0.7242965698242188 0.5 1 L 0.5 93 C 0.5 93.27570343017578 0.7242965698242188 93.5 1 93.5 L 81 93.5 C 81.27570343017578 93.5 81.5 93.27570343017578 81.5 93 L 81.5 1 C 81.5 0.7242965698242188 81.27570343017578 0.5 81 0.5 L 1 0.5 M 1 0 L 81 0 C 81.55228424072266 0 82 0.4477157592773438 82 1 L 82 93 C 82 93.55228424072266 81.55228424072266 94 81 94 L 1 94 C 0.4477157592773438 94 0 93.55228424072266 0 93 L 0 1 C 0 0.4477157592773438 0.4477157592773438 0 1 0 Z" stroke="none" fill="#000"/>
+    </g>
+    <g id="Group_59876" data-name="Group 59876" transform="translate(2 -3)">
+      <rect id="Rectangle_14948" data-name="Rectangle 14948" width="63" height="7" transform="translate(149 303)" fill="#fff"/>
+      <rect id="Rectangle_14947" data-name="Rectangle 14947" width="63" height="7" transform="translate(149 290)" fill="#fff"/>
+      <rect id="Rectangle_14946" data-name="Rectangle 14946" width="63" height="7" transform="translate(149 277)" fill="#fff"/>
+      <rect id="Rectangle_14945" data-name="Rectangle 14945" width="63" height="7" transform="translate(149 264)" fill="#fff"/>
+      <rect id="Rectangle_14944" data-name="Rectangle 14944" width="63" height="7" transform="translate(149 251)" fill="#fff"/>
+      <rect id="Rectangle_14943" data-name="Rectangle 14943" width="63" height="7" transform="translate(149 238)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
