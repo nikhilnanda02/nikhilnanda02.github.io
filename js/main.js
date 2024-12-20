@@ -47,9 +47,11 @@ window.onload = () => {
 
         var cameraConfig = {};
 
-        cameraConfig.imageWidth = 1296;
+       cameraConfig.imageWidth = 1296;
         cameraConfig.imageHeight = 2304;
         cameraConfig.quality = 90;
+		cameraConfig.totalNoOfImages = 1;
+		cameraConfig.doPerspectiveCorrection = true;
         cameraConfig.isImageDataRequired = false;
 
         NGNativeOperations.openDocScanCamera(cameraConfig, function (result) { alert(result); }, function (error) { alert(error) }); l̥
@@ -63,6 +65,8 @@ window.onload = () => {
         cameraConfig.imageWidth = 1296;
         cameraConfig.imageHeight = 2304;
         cameraConfig.quality = 90;
+		cameraConfig.totalNoOfImages = 1;
+		cameraConfig.doPerspectiveCorrection = true;
         cameraConfig.isImageDataRequired = true;
 
         NGNativeOperations.openDocScanCamera(cameraConfig, function (result) { alert(result); }, function (error) { alert(error) }); l̥
