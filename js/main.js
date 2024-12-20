@@ -50,28 +50,16 @@ window.onload = () => {
        cameraConfig.imageWidth = 1296;
         cameraConfig.imageHeight = 2304;
         cameraConfig.quality = 90;
-		cameraConfig.totalNoOfImages = 1;
 		cameraConfig.doPerspectiveCorrection = true;
-        cameraConfig.isImageDataRequired = false;
 
-        NGNativeOperations.openDocScanCamera(cameraConfig, function (result) { alert(result); }, function (error) { alert(error) }); l̥
+         NGNativeOperations.openDocScanCamera(cameraConfig, function (result) { 
+		alert("result",result); 
+		 $("#image").attr("src", result.fileData);
+		}, function (error) { alert(error) }); l̥
 
     }));
 
-    $("#openCamera1").click($.proxy(function (event) {
 
-        var cameraConfig = {};
-
-        cameraConfig.imageWidth = 1296;
-        cameraConfig.imageHeight = 2304;
-        cameraConfig.quality = 90;
-		cameraConfig.totalNoOfImages = 1;
-		cameraConfig.doPerspectiveCorrection = true;
-        cameraConfig.isImageDataRequired = true;
-
-        NGNativeOperations.openDocScanCamera(cameraConfig, function (result) { alert(result); }, function (error) { alert(error) }); l̥
-
-    }));
 
     receiveDataFunc = (msg) => {
         $(".morphoResult").text('');
