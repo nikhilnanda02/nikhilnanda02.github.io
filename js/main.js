@@ -54,7 +54,7 @@ window.onload = () => {
 
          NGNativeOperations.openDocScanCamera(cameraConfig, function (result) { 
 		console.log("result",result.fileData); 
-		  var  = "data:image/jpeg;base64," + result.fileData;
+		  var fullBase64Image  = "data:image/jpeg;base64," + result.fileData;
 		
 		 $("#image").attr("src", fullBase64Image);
 		}, function (error) { alert(error) });
