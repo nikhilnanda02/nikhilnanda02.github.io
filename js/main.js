@@ -56,7 +56,32 @@ window.onload = () => {
 		console.log("result",result.fileData); 
 		  var fullBase64Image  = "data:image/jpeg;base64," + result.fileData;
 		
-		 $("#image").attr("src", fullBase64Image);
+		 //$("#image").attr("src", fullBase64Image);
+		 
+		
+
+      $("#image").on("load", function () {
+        // Original dimensions of the image
+        const originalWidth = this.naturalWidth;
+        const originalHeight = this.naturalHeight;
+
+        // Desired width (for example, 300px)
+        const desiredWidth = 300;
+
+        // Maintain aspect ratio
+        const aspectRatio = originalHeight / originalWidth;
+        const desiredHeight = desiredWidth * aspectRatio;
+
+        // Set width and height
+        $(this).attr("width", desiredWidth);
+        $(this).attr("height", desiredHeight);
+      });
+
+      // Set the src to load the image
+      $("#image").attr("src", fullBase64Image);
+    
+		 
+		 
 		}, function (error) { alert(error) });
 
     }));
