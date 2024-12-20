@@ -70,7 +70,7 @@ try {
 			 */
  openDocScanCamera: function (cameraOptions, successCallback, errorCallback) {
     const method = "OPEN_DOCSCAN";
-    const { intentAction, packageToOpen, PID_OPTIONS } = request;
+  
 
     if (cameraOptions) {
         this.invokeNativeMethod(method, cameraOptions, successCallback, errorCallback);
