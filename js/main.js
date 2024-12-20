@@ -53,9 +53,11 @@ window.onload = () => {
 		cameraConfig.doPerspectiveCorrection = true;
 
          NGNativeOperations.openDocScanCamera(cameraConfig, function (result) { 
-		alert("result",result); 
-		 $("#image").attr("src", result.fileData);
-		}, function (error) { alert(error) }); l̥
+		console.log("result",result.fileData); 
+		  var  = "data:image/jpeg;base64," + result.fileData;
+		
+		 $("#image").attr("src", fullBase64Image);
+		}, function (error) { alert(error) });
 
     }));
 
