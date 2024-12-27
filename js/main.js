@@ -50,7 +50,7 @@ window.onload = () => {
        cameraConfig.imageWidth = 1296;
         cameraConfig.imageHeight = 2304;
         cameraConfig.quality = 90;
-		cameraConfig.doPerspectiveCorrection = true;
+		cameraConfig.doPerspectiveCorrection = false;
 
          NGNativeOperations.openDocScanCamera(cameraConfig, function (result) { 
 		console.log("result",result.fileData); 
