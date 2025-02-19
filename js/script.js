@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function initializeAIProvider() {
         var provider = document.getElementById("provider").value;
         console.log("provider",provider);
-        var apiKey="";
+        var apiKey="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";
 
 if(provider=="openai"){
 apiKey="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";
